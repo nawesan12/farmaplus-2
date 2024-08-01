@@ -1,5 +1,6 @@
 ---
 import ProductCard from "../components/ProductCard.astro";
+import ProductsSection from "../components/ProductsSection.astro";
 import Layout from "../layouts/Layout.astro";
 
 const electroSaludSelection = [
@@ -164,7 +165,7 @@ const starredProducts = [
     <div class="container mx-auto lg:max-w-7xl space-y-4">
       <h2 class="my-4 text-3xl font-semibold">Categorías</h2>
 
-      <div class="grid grid-cols-1 gap-2 lg:grid-cols-5 lg:gap-2">
+      <div class="grid grid-cols-2 gap-2 lg:grid-cols-5 lg:gap-2">
         <a href="./pages/salud.html" class="w-full">
           <img
             class="img-categoria w-full object-contain"
@@ -241,24 +242,18 @@ const starredProducts = [
       >
     </div>
     <!-- inicio salud electronica -->
-    <section class="container lg:max-w-7xl">
-      <h2 class="my-4 text-3xl font-semibold">
-        Nuestra Selección en Electro Salud
-      </h2>
-
-      <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
-        {
-          electroSaludSelection.map((e) => (
-            <ProductCard
-              name={e.name}
-              image={e.image}
-              link={e.link}
-              brand={e.brand}
-            />
-          ))
-        }
-      </div>
-    </section>
+    <ProductsSection title="Nuestra seleccion en Electro Salud">
+      {
+        electroSaludSelection.map((e) => (
+          <ProductCard
+            name={e.name}
+            image={e.image}
+            link={e.link}
+            brand={e.brand}
+          />
+        ))
+      }
+    </ProductsSection>
 
     <!-- fin salud electronica -->
     <!-- fin banner dermocosmetica -->
@@ -347,21 +342,17 @@ const starredProducts = [
     <!-- fin banner accesorios -->
     <!-- destacados -->
 
-    <section class="container lg:max-w-7xl">
-      <h2 class="my-4 text-3xl font-semibold">Productos Destacados</h2>
-
-      <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
-        {
-          starredProducts.map((e) => (
-            <ProductCard
-              name={e.name}
-              image={e.image}
-              link={e.link}
-              brand={e.brand}
-            />
-          ))
-        }
-      </div>
-    </section>
+    <ProductsSection title="Productos Destacados">
+      {
+        starredProducts.map((e) => (
+          <ProductCard
+            name={e.name}
+            image={e.image}
+            link={e.link}
+            brand={e.brand}
+          />
+        ))
+      }
+    </ProductsSection>
   </main>
 </Layout>
