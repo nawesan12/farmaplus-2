@@ -1,0 +1,166 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const convenios = [
+  {
+    name: "Apross",
+    imgSrc: "/assets/convenios_logo-apross.png",
+    altText: "convenios-logo-apross",
+    link: "https://wa.link/8cftly",
+  },
+  {
+    name: "Adef",
+    imgSrc: "/assets/convenios_logo-adef.png",
+    altText: "convenios-logo-adef",
+    link: "https://wa.link/a1nh4s",
+  },
+  {
+    name: "Atilra",
+    imgSrc: "/assets/convenios_logo-atilra.png",
+    altText: "convenios-logo-atilra",
+    link: "https://wa.link/p2snpm",
+  },
+  {
+    name: "Caja Notarial",
+    imgSrc: "/assets/convenios_logo-cajanotarial.png",
+    altText: "convenios-logo-cajaNotarial",
+    link: "https://wa.link/xv75jg",
+  },
+  {
+    name: "Cpce",
+    imgSrc: "/assets/convenios_logo-cpce.png",
+    altText: "convenios-logo-cpce",
+    link: "https://wa.link/9yrh1a",
+  },
+  {
+    name: "Jt",
+    imgSrc: "/assets/convenios_logo-jt.png",
+    altText: "convenios-logo-jt",
+    link: "https://wa.link/toz1xa",
+  },
+  {
+    name: "Mpn",
+    imgSrc: "/assets/convenios_logo-mpn.png",
+    altText: "convenios-logo-mpn",
+    link: "https://wa.link/g7u4b7",
+  },
+  {
+    name: "Osccptac",
+    imgSrc: "/assets/convenios_logo-osccptac.png",
+    altText: "convenios-logo-osccptac",
+    link: "https://wa.link/u8vpr9",
+  },
+  {
+    name: "Osfatlyf",
+    imgSrc: "/assets/convenios_logo-osfatlyf.png",
+    altText: "convenios-logo-osfatlyf",
+    link: "https://wa.link/motbus",
+  },
+  {
+    name: "Ospe",
+    imgSrc: "/assets/convenios_logo-ospe.png",
+    altText: "convenios-logo-ospe",
+    link: "https://wa.link/q7j39k",
+  },
+  {
+    name: "Ospedyc",
+    imgSrc: "/assets/convenios_logo-ospedyc.png",
+    altText: "convenios-logo-ospedyc",
+    link: "https://wa.link/yiwmfp",
+  },
+  {
+    name: "Osprera",
+    imgSrc: "/assets/convenios_logo-osprera.png",
+    altText: "convenios-logo-osprera",
+    link: "https://wa.link/290okv",
+  },
+  {
+    name: "Pami",
+    imgSrc: "/assets/convenios_logo-pami.png",
+    altText: "convenios-logo-pami",
+    link: "https://wa.link/26cm7x",
+  },
+  {
+    name: "Pap",
+    imgSrc: "/assets/convenios_logo-pap.png",
+    altText: "convenios-logo-pap",
+    link: "https://wa.link/rkyrq6",
+  },
+  {
+    name: "Premed",
+    imgSrc: "/assets/convenios_logo-premed.png",
+    altText: "convenios-logo-premed",
+    link: "https://wa.link/gn0tmc",
+  },
+  {
+    name: "Prevención Salud",
+    imgSrc: "/assets/convenios_logo-prevencionsalud.png",
+    altText: "convenios-logo-prevenciónSalud",
+    link: "https://wa.link/uuix08",
+  },
+  {
+    name: "Sancor Seguros",
+    imgSrc: "/assets/convenios_logo-sancorseguros.png",
+    altText: "convenios-logo-sancorSeguros",
+    link: "https://wa.link/zndp28",
+  },
+  {
+    name: "Sos Salud",
+    imgSrc: "/assets/convenios_logo-sossalud.png",
+    altText: "convenios-logo-sosSalud",
+    link: "https://wa.link/32i7mz",
+  },
+  {
+    name: "Sume",
+    imgSrc: "/assets/convenios_logo-sume.png",
+    altText: "convenios-logo-sume",
+    link: "https://wa.link/agnphs",
+  },
+  {
+    name: "Swiss Medical",
+    imgSrc: "/assets/convenios_logo-swissmedical.png",
+    altText: "convenios-logo-swissMedical",
+    link: "https://wa.link/ahwy07",
+  },
+  {
+    name: "Uepc",
+    imgSrc: "/assets/convenios_logo-uepc.png",
+    altText: "convenios-logo-uepc",
+    link: "https://wa.link/mohxzi",
+  },
+];
+---
+
+<Layout title="Convenios">
+  <h2 class="my-10 text-3xl font-semibold text-center">
+    Consulta tu cobertura
+  </h2>
+  <div
+    class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8 container max-w-7xl"
+  >
+    {
+      convenios.map((convenio) => (
+        <a
+          class="imgLink flex items-center justify-around bg-azulito rounded-xl p-8"
+          href={convenio.link}
+          target="_blank"
+        >
+          <img src={convenio.imgSrc} alt={convenio.altText} class="max-h-16" />
+          <p class="h-8 w-8 self-end bg-rosa text-xl font-semibold flex items-center justify-center rounded-full text-white">
+            +
+          </p>
+        </a>
+      ))
+    }
+  </div>
+</Layout>
+
+<style>
+  .bg-azulito {
+    background: #cee1f4;
+  }
+
+  .bg-rosa {
+    background: #f48ab6;
+  }
+</style>

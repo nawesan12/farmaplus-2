@@ -1,0 +1,12 @@
+---
+const { title, identifier } = Astro.props;
+---
+
+<section id={identifier} class="container max-w-7xl space-y-8 my-4">
+  <h2 class="my-4 text-3xl font-semibold">
+    {title}
+  </h2>
+  <div class="grid grid-cols-1 gap-4 lg:grid-cols-4 lg:gap-8">
+    <slot />
+  </div>
+</section>

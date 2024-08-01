@@ -1,0 +1,303 @@
+---
+import ProductCard from "../components/ProductCard.astro";
+import ProductsSection from "../components/ProductsSection.astro";
+import ProductsCategories from "../components/ProductsCategories.astro";
+import Layout from "../layouts/Layout.astro";
+
+const panalera = [
+  {
+    name: "Pañales Babysec",
+    brand: "Ultrasec",
+    image: "/assets/babysec-ultrasec.png",
+    link: "https://wa.link/3xu8gk",
+  },
+  {
+    name: "Pañales Estrella",
+    brand: "Baby",
+    image: "/assets/estrellababy.png",
+    link: "https://wa.link/fll5ze",
+  },
+  {
+    name: "Pañales Huggies",
+    brand: "Protec Plus",
+    image: "/assets/huggies-protectplus.png",
+    link: "https://wa.link/ej61ap",
+  },
+  {
+    name: "Pañales Pampers",
+    brand: "Baby-dry",
+    image: "/assets/pampersbabydry-xxghipoalergenico.png",
+    link: "https://wa.link/x33r27",
+  },
+];
+
+const leches = [
+  {
+    name: "Leche Polvo Nutrilon",
+    brand: "Profutura",
+    image: "/assets/nutrilon2Lata-prod.png",
+    link: "https://wa.link/s1m5kf",
+  },
+  {
+    name: "Leche Polvo Vital",
+    brand: "Vital",
+    image: "/assets/vital1Lata.png",
+    link: "https://wa.link/ngeey7",
+  },
+  {
+    name: "Leche Polvo Sancor",
+    brand: "Advanced",
+    image: "/assets/sancor-leche.png",
+    link: "https://wa.link/g270on",
+  },
+  {
+    name: "Leche Polvo Nestle Nido",
+    brand: "Nido",
+    image: "/assets/NestleNido3Lata.png",
+    link: "https://wa.link/sa22xy",
+  },
+];
+
+const ortopedia = [
+  {
+    name: "Faja Bodycare",
+    brand: "Bodycare",
+    image: "/assets/bodycare-faja.png",
+    link: "https://wa.link/ko7g22",
+  },
+  {
+    name: "Rodillera Bodycare",
+    brand: "Bodycare",
+    image: "/assets/bodycare-rodillera.png",
+    link: "https://wa.link/5c79ze",
+  },
+  {
+    name: "Muñequera Bodycare",
+    brand: "Bodycare",
+    image: "/assets/bodycare-muñequera.png",
+    link: "https://wa.link/0xgx08",
+  },
+  {
+    name: "Cabestrillo Bodycare",
+    brand: "Bodycare",
+    image: "/assets/bodycare-cabestrillo.png",
+    link: "https://wa.link/djt471",
+  },
+];
+
+const dietetica = [
+  {
+    name: "Barra de chocolate",
+    brand: "Lulemuu",
+    image: "/assets/lulemuu-barritachocolate.png",
+    link: "https://wa.link/bh1zeh",
+  },
+  {
+    name: "Alfajor de marroc",
+    brand: "Lulemuu",
+    image: "/assets/lulemuu-alfajormarroc.png",
+    link: "https://wa.link/mpllx9",
+  },
+  {
+    name: "Bizcochos de arroz",
+    brand: "Lulemuu",
+    image: "/assets/lulemuu-bizcochos.png",
+    link: "https://wa.link/n3fka7",
+  },
+  {
+    name: "Barra de yogur frutilla",
+    brand: "Lulemuu",
+    image: "/assets/lulemuu-barritayogurfrutilla.png",
+    link: "https://wa.link/4a89vn",
+  },
+  {
+    name: "Oblea de pasta de mani",
+    brand: "Lulemuu",
+    image: "/assets/lulemuu-barritapasta.png",
+    link: "https://wa.link/yy9wvs",
+  },
+  {
+    name: "Tostadas multisemillas",
+    brand: "Lulemuu",
+    image: "/assets/lulemuu-tostadasmultisemillas.png",
+    link: "https://wa.link/oikrmg",
+  },
+  {
+    name: "Tostadas de arroz",
+    brand: "Lulemuu",
+    image: "/assets/lulemuu-tostadas.png",
+    link: "https://wa.link/nem2go",
+  },
+  {
+    name: "Alfajor dulce de leche",
+    brand: "Lulemuu",
+    image: "/assets/lulemuu-alfajorddl.png",
+    link: "https://wa.link/jifz5s",
+  },
+];
+
+const faciales = [
+  {
+    name: "Isdin Fotoprotector",
+    brand: "Isdin",
+    image: "/assets/isdin-fusionwater.png",
+    link: "https://wa.link/5fvglk",
+  },
+  {
+    name: "Adermicina Facial",
+    brand: "Adermicina",
+    image: "/assets/adermicina-cuidadofacial.png",
+    link: "https://wa.link/17whdd",
+  },
+  {
+    name: "Loreal Serum Revitalif",
+    brand: "Loreal",
+    image: "/assets/loreal-serumrevitalift.png",
+    link: "https://wa.link/oef9b9",
+  },
+  {
+    name: "Neutrogena Hydro boost",
+    brand: "Neutrogena",
+    image: "/assets/neutrogenaProd.png",
+    link: "https://wa.link/j9ku9v",
+  },
+];
+
+const suplementos = [
+  {
+    name: "Suplemento Dietario",
+    brand: "Curflex",
+    image: "/assets/curflex-prod.png",
+    link: "https://wa.link/2mz7wn",
+  },
+  {
+    name: "Suplemento Dietario",
+    brand: "Infiltrex",
+    image: "/assets/infiltrex.png",
+    link: "https://wa.link/objt01",
+  },
+  {
+    name: "Suplemento Dietario",
+    brand: "Oviflex",
+    image: "/assets/oviflexfrasco.png",
+    link: "https://wa.link/qrvygb",
+  },
+  {
+    name: "Suplemento Dietario",
+    brand: "102 Plus",
+    image: "/assets/102-mujer.png",
+    link: "https://wa.link/w6d9cx",
+  },
+  {
+    name: "Suplemento Dietario",
+    brand: "Colageno Articulaciones",
+    image: "/assets/colagenoarticulaciones.png",
+    link: "https://wa.link/lfab3n",
+  },
+  {
+    name: "Suplemento Deportivo",
+    brand: "Ena Whey Protein",
+    image: "/assets/enaproteina.png",
+    link: "https://wa.link/6z8d1p",
+  },
+  {
+    name: "Suplemento Dietario",
+    brand: "Colágeno",
+    image: "/assets/colageno-y10.png",
+    link: "https://wa.link/7a0sse",
+  },
+  {
+    name: "Suplemento Dietario",
+    brand: "Ultraflex",
+    image: "/assets/ultraflexcomun.png",
+    link: "https://wa.link/wic3kd",
+  },
+];
+---
+
+<Layout title="Productos | Farmaplus">
+  <main>
+    <ProductsCategories />
+
+    <ProductsSection title="Pañales" identifier="pañalera">
+      {
+        panalera.map((e) => (
+          <ProductCard
+            name={e.name}
+            image={e.image}
+            link={e.link}
+            brand={e.brand}
+          />
+        ))
+      }
+    </ProductsSection>
+
+    <ProductsSection
+      title="Leches Maternizadas"
+      identifier="lechesMaternizadas"
+    >
+      {
+        leches.map((e) => (
+          <ProductCard
+            name={e.name}
+            image={e.image}
+            link={e.link}
+            brand={e.brand}
+          />
+        ))
+      }
+    </ProductsSection>
+
+    <ProductsSection title="Ortopedia" identifier="ortopedia">
+      {
+        ortopedia.map((e) => (
+          <ProductCard
+            name={e.name}
+            image={e.image}
+            link={e.link}
+            brand={e.brand}
+          />
+        ))
+      }
+    </ProductsSection>
+
+    <ProductsSection title="Dietetica" identifier="dietetica">
+      {
+        dietetica.map((e) => (
+          <ProductCard
+            name={e.name}
+            image={e.image}
+            link={e.link}
+            brand={e.brand}
+          />
+        ))
+      }
+    </ProductsSection>
+
+    <ProductsSection title="Dermocosmetica" identifier="faciales">
+      {
+        faciales.map((e) => (
+          <ProductCard
+            name={e.name}
+            image={e.image}
+            link={e.link}
+            brand={e.brand}
+          />
+        ))
+      }
+    </ProductsSection>
+
+    <ProductsSection title="Suplementos" identifier="suplementos">
+      {
+        suplementos.map((e) => (
+          <ProductCard
+            name={e.name}
+            image={e.image}
+            link={e.link}
+            brand={e.brand}
+          />
+        ))
+      }
+    </ProductsSection>
+  </main>
+</Layout>

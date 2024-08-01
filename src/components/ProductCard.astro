@@ -1,0 +1,38 @@
+---
+interface Props {
+  name: string;
+  image: string;
+  brand: string;
+  link: string;
+}
+
+const { name, brand, image, link } = Astro.props;
+---
+
+<article class="bg-azulito rounded-xl p-3">
+  <div class="cardDest">
+    <img
+      src={image}
+      alt="balanza-digital-silfab aspect-square object-contain"
+    />
+    <div class="bg-white rounded-xl p-2">
+      <h3 class="font-semibold text-xl truncate" title={name}>{name}</h3>
+      <div class="flex flex-col pr-2 pb-2">
+        <p>{brand}</p>
+        <a
+          href={link}
+          class="self-end bg-rose-300 text-white grid place-items-center font-bold h-6 w-6 rounded-full"
+          target="_blank"
+        >
+          +
+        </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<style>
+  .bg-azulito {
+    background: #cee1f4;
+  }
+</style>
