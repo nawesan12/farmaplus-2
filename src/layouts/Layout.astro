@@ -1,9 +1,12 @@
 ---
+import MainHeader from "../components/MainHeader.astro";
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
+const pathname = Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -52,71 +55,12 @@ const { title } = Astro.props;
         >
       </p>
     </div>
-    <header class="flex items-center bg-light">
-      <!-- inicio nav-bar -->
-      <nav class="p-4 w-full">
-        <div class="mx-auto flex justify-between items-center px-4">
-          <a href="/" class="flex items-center">
-            <img
-              class="logo-principal h-14"
-              src="/assets/logo-farmaplus.png"
-              alt="logo-farmaplus-página"
-            />
-          </a>
-          <div class="hidden md:flex space-x-4 text-gray-800">
-            <a href="/" class="text-black font-medium">Inicio</a>
-            <a href="/productos" class="text-black font-medium">Productos</a>
-            <a href="/salud" class="text-black font-medium">Salud</a>
-            <a href="/convenios" class="text-black font-medium">Convenios</a>
-            <a href="/sucursales" class="text-black font-medium">Sucursales</a>
-          </div>
-          <div class="hidden md:flex space-x-4">
-            <a
-              href="https://www.instagram.com/farmaplusfarmacia/"
-              target="_blank"
-              class="text-2xl text-gray-800"
-              ><i class="fa-brands fa-instagram"></i></a
-            >
-            <a
-              href="https://wa.link/la2wgi"
-              target="_blank"
-              class="text-2xl text-gray-800"
-              ><i class="fa-brands fa-whatsapp"></i></a
-            >
-          </div>
-          <div class="md:hidden flex items-center">
-            <button id="menu-button" class="text-gray-800">
-              <i class="fa-solid fa-bars"></i>
-            </button>
-          </div>
-        </div>
-        <div
-          id="mobile-menu"
-          class="md:hidden flex flex-col space-y-2 mt-4 hidden"
-        >
-          <a href="./index.html" class="nav-link">Inicio</a>
-          <a href="./pages/productos.html" class="nav-link">Productos</a>
-          <a href="./pages/salud.html" class="nav-link">Salud</a>
-          <a href="./pages/convenios.html" class="nav-link">Convenios</a>
-          <a href="./pages/sucursales.html" class="nav-link">Sucursales</a>
-          <div class="flex space-x-4">
-            <a
-              href="https://www.instagram.com/farmaplusfarmacia/"
-              target="_blank"
-              class="text-gray-800"><i class="fa-brands fa-instagram"></i></a
-            >
-            <a
-              href="https://wa.link/la2wgi"
-              target="_blank"
-              class="text-gray-800"><i class="fa-brands fa-whatsapp"></i></a
-            >
-          </div>
-        </div>
-      </nav>
-    </header>
+    <MainHeader />
     <slot />
 
-    <footer class="mt-10 bg-light">
+    <footer
+      class={`${pathname === "/salud" || pathname === "/sucursales" ? "" : "mt-10"} bg-light`}
+    >
       <hr />
 
       <div class="mx-auto max-w-screen-xl px-4 pb-6 pt-8 sm:px-6 lg:px-8">
